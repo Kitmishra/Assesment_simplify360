@@ -21,9 +21,9 @@ class friendship:
     self.friends[name2].add(name1)
 
   def find_friend(self, person):         # This function will return all the friends of person, it can be either bob, alice or anyone else.
-    return self.friends[person]
+    return self.friends[person]          TIME AND SPACE -> O (1)
     
-  def find_common_friends(self, person1, person2):
+  def find_common_friends(self, person1, person2):           #TIME AND SPACE -> O(MIN(LEN(person1_friends, person2_friends))
     person1_friends = self.friends[person1]                # find friend of person1.
     person2_friends = self.friends[person2]                # find friend of person2.
     return person1_friends.intersection(person2_friends)   # finding the common friends of person1 and person2.
@@ -35,7 +35,7 @@ class friendship:
 
     while queue:                                          # BFS traversal in graph until we find the person2 or queue is empty. 
       current_person, distance = queue.popleft()
-      if current_person in visited:
+      if current_person in visited:                        #TIME  -> O(V + E)  AND SPACE ->  O(E)
         continue
       if current_person == person2:
         return distance
@@ -47,4 +47,5 @@ class friendship:
 
     return -1         # returning -1 in case if person1 and person2 are not friends.
   
+
 
