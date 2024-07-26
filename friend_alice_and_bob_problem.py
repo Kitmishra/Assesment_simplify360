@@ -21,7 +21,7 @@ class friendship:
     self.friends[name2].add(name1)
 
   def find_friend(self, person):         # This function will return all the friends of person, it can be either bob, alice or anyone else.
-    return self.friends[person]          TIME AND SPACE -> O (1)
+    return self.friends[person]          #TIME AND SPACE -> O (1)
     
   def find_common_friends(self, person1, person2):           #TIME AND SPACE -> O(MIN(LEN(person1_friends, person2_friends))
     person1_friends = self.friends[person1]                # find friend of person1.
